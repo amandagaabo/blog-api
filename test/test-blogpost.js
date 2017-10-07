@@ -91,20 +91,20 @@ describe('Blog post', function () {
         return chai.request(app)
           .put(`/blogposts/${updateData.id}`)
           .send(updateData)
-      })
-      // prove that the PUT request has right status code
-      .then(function (res) {
-        res.should.have.status(200)
-        res.should.be.json
-        res.body.should.be.a('object')
-        res.body.should.include.keys('id', 'title', 'author', 'content', 'publishDate')
-        res.body.id.should.not.be.null
-        res.body.title.should.equal(updateData.title)
-        res.body.author.should.equal(updateData.author)
-        res.body.content.should.equal(updateData.content)
-        res.body.publishDate.should.equal(updateData.publishDate)
-        // resolve promise
-        return Promise.resolve()
+          // prove that the PUT request has right status code
+          .then(function (res) {
+            res.should.have.status(200)
+            res.should.be.json
+            res.body.should.be.a('object')
+            res.body.should.include.keys('id', 'title', 'author', 'content', 'publishDate')
+            res.body.id.should.not.be.null
+            res.body.title.should.equal(updateData.title)
+            res.body.author.should.equal(updateData.author)
+            res.body.content.should.equal(updateData.content)
+            res.body.publishDate.should.equal(updateData.publishDate)
+            // resolve promise
+            return Promise.resolve()
+          })
       })
   })
 
@@ -117,11 +117,11 @@ describe('Blog post', function () {
       .then(function (res) {
         return chai.request(app)
           .delete(`/blogposts/${res.body[0].id}`)
-      })
-      .then(function (res) {
-        res.should.have.status(204)
-        // resolve promise
-        return Promise.resolve()
+          .then(function (res) {
+            res.should.have.status(204)
+            // resolve promise
+            return Promise.resolve()
+          })
       })
   })
 })
