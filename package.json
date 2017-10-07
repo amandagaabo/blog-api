@@ -2,9 +2,10 @@
   "name": "blog-api-challenge",
   "version": "1.0.0",
   "description": "blog api challenge for Thinkful",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "test": "mocha ./test"
   },
   "author": "",
   "license": "ISC",
@@ -13,5 +14,10 @@
     "express": "^4.16.1",
     "morgan": "^1.9.0",
     "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "mocha": "^4.0.1"
   }
 }
